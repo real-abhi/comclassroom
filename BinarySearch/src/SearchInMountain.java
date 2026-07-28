@@ -1,8 +1,10 @@
 public class SearchInMountain {
     public static void main(String[] args){
-
+        int [] arr = {2,4,5,6,4,3,2};
+        int ans = search(arr,5);
+        System.out.println(ans);
     }
-    int search(int[] arr, int target){
+    static int search(int[] arr, int target){
         int peak = peakIndexMountainArray(arr);
         int firstTry = orderAgnosticBS(arr,target,0,peak);
         if(firstTry != -1 ){
@@ -11,7 +13,7 @@ public class SearchInMountain {
         //try to search in second half
         return orderAgnosticBS(arr,target,peak+1,arr.length-1);
     }
-    public int peakIndexMountainArray(int[] arr){
+    static int peakIndexMountainArray(int[] arr){
         int start = 0;
         int end  = arr.length-1;
 
